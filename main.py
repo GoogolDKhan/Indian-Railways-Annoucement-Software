@@ -6,7 +6,7 @@ Purpose :  Fourth Project
 
 pip install pyaudio
 pip install pydub
-Download ffmpeg, extract, create ffmpeg folder in program files and move content to it and change environment variables path on system (bin folder)
+Download ffmpeg from website, then extract the files and create ffmpeg folder in program files and move content to it and then add bin folder's path in environment variables path on system.
 pydub uses ffmpeg
 pip install gTTS
 pip install pandas
