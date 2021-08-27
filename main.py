@@ -1,19 +1,3 @@
-'''
-POSSIBILITIES ARE ENDLESS
-Author  :  Sarfaraz
-Date    :  19/05/2021
-Purpose :  Fourth Project
-
-pip install pyaudio
-pip install pydub
-Download ffmpeg from website, then extract the files and create ffmpeg folder in program files and move content to it and then add bin folder's path in environment variables path on system.
-pydub uses ffmpeg
-pip install gTTS
-pip install pandas
-pip install openpyxl
-pydub uses milliseconds so if its 1:20,1:35 i.e 80,95 seconds so conversion to milli will be second*1000.
-Do not delete generatedAudio and Announcement folder
-'''
 import os
 import pandas as pd
 from pydub import AudioSegment
@@ -39,7 +23,7 @@ def generateSkeleton():
     audio = AudioSegment.from_mp3('railway_audio.mp3')
 
     # 1.Generate 'Krupaya Dhyaan Dijiye'
-    start = 88000
+    start = 88000  #88000 is 88 seconds which is 1:28 min
     finish = 90200
     audioProcessed = audio[start:finish]
     audioProcessed.export("generatedAudio/1_audio.mp3", format="mp3")
