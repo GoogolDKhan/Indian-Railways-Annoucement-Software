@@ -6,7 +6,7 @@ from gtts import gTTS
 
 def textToSpeech(text, filename):
     mytext = str(text)
-    language = 'hi'
+    language = "hi"
     myobj = gTTS(text=mytext, lang=language, slow=True)
     myobj.save(filename)
 
@@ -20,10 +20,10 @@ def mergeAudios(audios):
 
 
 def generateSkeleton():
-    audio = AudioSegment.from_mp3('railway_audio.mp3')
+    audio = AudioSegment.from_mp3("railway_audio.mp3")
 
     # 1.Generate 'Krupaya Dhyaan Dijiye'
-    start = 88000  #88000 is 88 seconds which is 1:28 min
+    start = 88000  # 88000 is 88 seconds which is 1:28 min
     finish = 90200
     audioProcessed = audio[start:finish]
     audioProcessed.export("generatedAudio/1_audio.mp3", format="mp3")
@@ -75,20 +75,21 @@ def generateAnnouncement(filename):
     for index, item in df.iterrows():
 
         # Generate 2.is from city
-        textToSpeech(item['from'], 'generatedAudio/2_audio.mp3')
+        textToSpeech(item["from"], "generatedAudio/2_audio.mp3")
 
         # Generate 4.is via city
-        textToSpeech(item['via'], 'generatedAudio/4_audio.mp3')
+        textToSpeech(item["via"], "generatedAudio/4_audio.mp3")
 
         # Generate 6.is to city
-        textToSpeech(item['to'], 'generatedAudio/6_audio.mp3')
+        textToSpeech(item["to"], "generatedAudio/6_audio.mp3")
 
         # Generate 8.is train number and name
-        textToSpeech(item['train_no'] + " " +
-                     item['train_name'], 'generatedAudio/8_audio.mp3')
+        textToSpeech(
+            item["train_no"] + " " + item["train_name"], "generatedAudio/8_audio.mp3"
+        )
 
         # Generate 10.Platfrom number
-        textToSpeech(item['platform'], 'generatedAudio/10_audio.mp3')
+        textToSpeech(item["platform"], "generatedAudio/10_audio.mp3")
 
         audios = [f"generatedAudio/{i}_audio.mp3" for i in range(1, 12)]
 
@@ -96,7 +97,7 @@ def generateAnnouncement(filename):
         announcement.export(f"Announcement/announcement_{index+1}.mp3", format="mp3")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print("Generating Skeleton...")
     generateSkeleton()
     print("Now Generating Announcement...")
