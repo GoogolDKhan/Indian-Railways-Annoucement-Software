@@ -1,2 +1,2 @@
-Announcement/
-generatedAudio/
+Announcement/*.mp3
+generatedAudio/*_audio.mp3
