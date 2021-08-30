@@ -1,4 +1,4 @@
-# Indian Railways Annoucement Software
+# Indian Railways Annoucement Software [![CodeFactor](https://www.codefactor.io/repository/github/googoldkhan/indian-railways-annoucement-software/badge)](https://www.codefactor.io/repository/github/googoldkhan/indian-railways-annoucement-software)
 
 -  PyAudio is used for playing and recording audio.
 -  Pydub is used for audio manipulation
